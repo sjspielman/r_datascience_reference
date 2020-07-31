@@ -157,6 +157,74 @@ levels(several_fruits3)  # [1] "Papaya" "Apple"  "Cherry" "Banana"
 Data frames and functions  {data-orientation=columns}
 =====================================
 
+
+Column
+----------------------------------------------------------
+
+### Miscellaneous functions
+
+
+```{r}
+# Useful functions for numbers
+x <- 100
+
+# Natural log by default. Second argument specifies base
+log(x)       # [1] 4.60517 
+log(x, 10)   # [1] 2
+
+# Square root
+sqrt(x)      # [1] 10
+
+# Absolute value (boring, so multiply by -1!)
+abs(x*-1)    # [1] 100
+
+# Various ways to round
+x <- 100.679274
+round(x)       # [1] 101
+round(x, 2)    # [1] 100.68
+floor(x)       # [1] 100 . Round down to nearest whole number
+ceiling(x)     # [1] 101 . Round up to nearest whole numer 
+
+# Use functions for arrays
+x <- c(0, 1, 1, 2, 3, 5, 8, 13)
+
+# Number of elements in an array
+length(x)       # [1] 8
+
+# Sum of elements in array (if numeric or logical!)
+sum(x)          # [1] 33
+
+logical_array <- c(TRUE, FALSE, FALSE, TRUE, TRUE) # TRUE=1; FALSE=0
+sum(logical_array)  # [1] 3
+
+# all() asks: Are ALL values TRUE for the condition?
+all(x > 5)      # [1] FALSE
+
+# any() asks: Are ANY values TRUE for the condition?
+any(x > 5)      # [1] TRUE
+
+# Find all unique values 
+unique(x)       # [1] 0  1  2  3  5  8 13
+
+# Sort an array
+unsorted <- c(8, 1, 66, 24, 0, -6)
+sort(unsorted)  # [1] -6  0  1  8 24 66
+
+# Number of characters in a character variable
+x <- "pineapple"
+nchar(x)      # [1] 9
+
+# Check for NA's in data
+x <- "pineapple"
+is.na(x)     # [1] FALSE
+
+x <- c(1, 4, NA, 10, 24, NA, 13)
+is.na(x)     # [1] FALSE FALSE TRUE FALSE FALSE TRUE FALSE
+```
+
+
+
+
 Column
 ----------------------------------------------------------
 
@@ -188,81 +256,6 @@ ncol(iris)   # [1] 5
 ```{r}
 # Summarize the whole data frame
 summary(iris)
-```
-
-
-Column
-----------------------------------------------------------
-
-### Miscellaneous functions
-
-
-```{r, eval=FALSE}
-# Useful functions for numbers
-x <- 100
-
-# Natural log by default. Second argument specifies base
-log(x)       # [1] 4.60517 
-log(x, 10)   # [1] 2
-
-# Square root
-sqrt(x)      # [1] 10
-
-# Absolute value (boring, so multiply by -1!)
-abs(x*-1)    # [1] 100
-```
-
-```{r, eval=FALSE}
-# Various ways to round
-x <- 100.679274
-round(x)       # [1] 101
-round(x, 2)    # [1] 100.68
-floor(x)       # [1] 100
-ceiling(x)     # [1] 101
-```
-
-
-```{r, eval=FALSE}
-# Use functions for arrays
-x <- c(0, 1, 1, 2, 3, 5, 8, 13)
-
-# Number of elements in an array
-length(x)       # [1] 8
-
-# Sum of elements in array (if numeric or logical!)
-sum(x)          # [1] 33
-
-logical_array <- c(TRUE, FALSE, FALSE, TRUE, TRUE) # TRUE=1; FALSE=0
-sum(logical_array)  # [1] 3
-
-# all() asks: Are ALL values TRUE for the condition?
-all(x > 5)      # [1] FALSE
-
-# any() asks: Are ANY values TRUE for the condition?
-any(x > 5)      # [1] TRUE
-
-# Find all unique values 
-unique(x)       # [1] 0  1  2  3  5  8 13
-
-# Sort an array
-unsorted <- c(8, 1, 66, 24, 0, -6)
-sort(unsorted)  # [1] -6  0  1  8 24 66
-```
-
-```{r, eval=FALSE}
-# Number of characters in a character variable
-x <- "pineapple"
-nchar(x)      # [1] 9
-```
-
-
-```{r, eval=FALSE}
-# Check for NA's in data
-x <- "pineapple"
-is.na(x)     # [1] FALSE
-
-x <- c(1, 4, NA, 10, 24, NA, 13)
-is.na(x)     # [1] FALSE FALSE TRUE FALSE FALSE TRUE FALSE
 ```
 
 
